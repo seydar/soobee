@@ -79,6 +79,9 @@ function connect() {
         }
         chatBox.innerHTML += event.object.message;
         chatBox.scrollTop = chatBox.scrollHeight;
+      }else if((name=="htmlchat") && (event.object.message)){
+        alert("received new HTML");
+        document.getElementById("url_box").innerHTML = event.object.message;
       }
     }
   };
