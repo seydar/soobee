@@ -31,7 +31,8 @@ function on_submit_name(event) {
     messageInput.focus();
     // Subscribe to the chat event queue, to receive all past and future
     // messages.
-    channel.subscribe([{"type": "event_queue", "name": "chat"}], 0);
+    channel.subscribe([{"type": "event_queue", "name": "chat"}, 
+                        {"type": "event_queue", "name": "htmlchat"}], 0);
     // Send a message announcing the user's arrival to all users.
     channel.event_queue(
      "chat",
@@ -80,8 +81,12 @@ function connect() {
         chatBox.innerHTML += event.object.message;
         chatBox.scrollTop = chatBox.scrollHeight;
       }else if((name=="htmlchat") && (event.object.message)){
-        alert("received new HTML");
-        document.getElementById("url_box").innerHTML = event.object.message;
+        alert("received new HTML: \n" + event.object.message);
+        window.frames['url_box'].src = event.object.message.substring(1);
+
+        window.frames['url_box'].onmouseup = mouseUp;        
+
+
       }
     }
   };

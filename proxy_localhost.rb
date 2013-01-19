@@ -5,8 +5,8 @@ require 'open-uri'
 get '/proxy/*' do
   headers 'Access-Control-Allow-Origin' => '*'
 
-  proxy = 'http://localhost:4567/proxy/';
-  url   = request.env['REQUEST_URI']['/proxy'.size+1..-1]
+  proxy = 'http://67.194.205.157:4567/proxy';
+  url   = request.env['REQUEST_URI']['/proxy/'.size..-1]
 
   url =~ /(http:\/\/(.+)\..{3})/
   host = $1

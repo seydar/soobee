@@ -11,8 +11,23 @@
    	</head>
 
    	<body style="height:95%; width:99%">
-   		<iframe name="url" id="url_box" src="/proxy/http://en.wikipedia.org/wiki/Main_Page" seamless>
+   		<iframe name="url" id="url_box" src="/proxy/http://en.wikipedia.org/wiki/Main_Page" seamless onLoad='alert(window.frames["url_box"].src)'>
    		</iframe>
+   		<script> <!--
+   		window.frames['url_box'].onLoad = function(){
+
+   			  channel.event_queue(
+     	"htmlchat",
+     	{"object": {"message": "a" + this.src}});
+			};
+			-->
+$('iframe a[target="_blank"]').live('click',function(e){
+e.preventDefault(); //stops it opening in a new window
+var url = $(this).attr('href');
+$('iframe').load(url);
+});
+   		</script>
+
 
    		<div id="chatter">
 			<div id="chatbox">
