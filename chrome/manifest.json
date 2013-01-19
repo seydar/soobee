@@ -14,7 +14,7 @@
     {
       "matches": ["http://*/*","https://*/*"],
       "css": ["writer.css"],
-      "js": ["imoapi-min.js", "jquery-1.9.0.min.js", "writer.js","chat.js", "chatbox.js"]
+      "js": ["imoapi-min.js", "jquery-1.9.0.min.js", "writer.js", "chat.js"]
     }
   ]
 }

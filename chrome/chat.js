@@ -82,7 +82,6 @@ function connect() {
     }
   };
 
-      alert("tits");
   //  document.write("BLAHHHHHHHHHH");
   return new IMO.Channel(client);
 };
@@ -90,15 +89,13 @@ function connect() {
 window.onload = function() {
 
 
-  make_chat_box;
+  make_chat_box();
   // Map the HTML elements to variables, and set up listeners for form
   // submission.
   nameForm = document.getElementById("name_form");
   nameInput = document.getElementById("name_input");
   connectButton = document.getElementById("connect_button");
   nameForm.onsubmit = on_submit_name;
-
-  alert("balls");
 
   nameInput.disabled = connectButton.disabled = false;
 
@@ -115,34 +112,10 @@ window.onload = function() {
 
 
 function make_chat_box(){
-
-var $newdiv1 = $('<div id="object1" style="position:fixed; left:10px; top:40px; background-color:#EEEEEE; width:10%; height:40%">');
-$('body').append($newdiv1);
-
-object1.innerHTML = '       \
-    <table border="1" cellpadding="0" cellspacing="1">                  \
-      <tr>                                        \
-        <td class="column" id="chat">                         \
-          <form id="name_form">                             \
-             Namekey: "value",                              \
-             <input type=text id="name_input" disabled>                 \
-             <input type="submit" id="connect_button" value="Connect" disabled>     \
-          </form>                                   \
-                                                  \
-          <div id="chat_box">                             \
-          </div>                                    \
-                                                  \
-          <form id="message_form">                            \
-            <input type=text id="message_input" disabled>               \
-            <input type="submit" id="send_button" value="Send" disabled>        \
-          </form>                                   \
-        </td>                                     \
-                                                \
-                                                \
-      </tr>                                       \
-    </table>';
-
-    
-
+  var $newdiv1 = $('<div id="chatter"><div id="chatbox"></div><div id="closer"></div></div>');
+  $('body').append($newdiv1);
+  
+  $('#chatbox').innerHTML = "hello world";
+  $('#closer').click(function() { $('#chatbox').toggle('slow'); });
 };
 

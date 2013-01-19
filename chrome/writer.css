@@ -17,3 +17,29 @@
   padding-top: 2px;
 }
 
+#chatter {
+  position: fixed;
+  top: 25%;
+  width: 20%;
+  height: 50%;
+  filter: alpha(opacity=1);
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  opacity: 1;
+  z-index: 10000;
+}
+
+#chatbox {
+  height: 100%;
+  width: 95%;
+  background-color: #aaaaaa;
+  float: left;
+}
+
+#closer {
+  height: 100%;
+  width: 5%;
+  background-color: #0000FF;
+  float: left;
+}
+
