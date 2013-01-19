@@ -14,8 +14,7 @@ input#connect_button {
 }
 
 input#message_input {
-  width: 75%;
-  height: 18px
+  width: 70%;
   margin: 2px;
 }
 
@@ -24,7 +23,7 @@ input#send_button {
   margin: 2px;
 }
 
-#chat #chat_box {
+#chat_box {
   background: #FFC2DA;
   width: -10px;
   height: 83%;
@@ -39,11 +38,16 @@ input#send_button {
 }
 
 iframe {
-  height: 93%;
+  height: 87%;
   width: 100%;
+}
+
+#toolbar {
 }
 
 table {
   position: absolute;
+  width: 99%;
+  height: 98%;
 }
 
