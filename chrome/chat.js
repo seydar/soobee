@@ -81,6 +81,8 @@ function connect() {
       }
     }
   };
+
+      alert("tits");
   //  document.write("BLAHHHHHHHHHH");
   return new IMO.Channel(client);
 };
@@ -95,6 +97,10 @@ window.onload = function() {
   nameInput = document.getElementById("name_input");
   connectButton = document.getElementById("connect_button");
   nameForm.onsubmit = on_submit_name;
+
+  alert("balls");
+
+  nameInput.disabled = connectButton.disabled = false;
 
   messageForm = document.getElementById("message_form");
   messageInput = document.getElementById("message_input");
@@ -113,7 +119,7 @@ function make_chat_box(){
 var $newdiv1 = $('<div id="object1" style="position:fixed; left:10px; top:40px; background-color:#EEEEEE; width:10%; height:40%">');
 $('body').append($newdiv1);
 
-object1.innerHTML = '                                   \
+object1.innerHTML = '       \
     <table border="1" cellpadding="0" cellspacing="1">                  \
       <tr>                                        \
         <td class="column" id="chat">                         \
@@ -134,7 +140,7 @@ object1.innerHTML = '                                   \
                                                 \
                                                 \
       </tr>                                       \
-    </table><script src="chat.js"></script>';
+    </table>';
 
     
 
