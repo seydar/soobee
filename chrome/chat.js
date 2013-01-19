@@ -111,28 +111,7 @@ window.onload = function() {
 };
 
 
-function make_chat_box(){
-  str = ['<div id="chatter">',
-         '<div id="chatbox">',
-         '<form id="name_form">',
-         '  Name:',
-         '  <input type=text id="name_input" disabled>',
-         '  <input type="submit" id="connect_button" value="Connect" disabled>',
-         '</form>',
-         '<div id="chat_box">',
-         '</div>',
-         '<form id="message_form">',
-         '  <input type=text id="message_input" disabled>',
-         '  <input type="submit" id="send_button" value="Send" disabled>',
-         '</form>',
-         '</div>',
-         '<div id="closer">',
-         '</div>',
-         '</div>'
-        ].join("");
-  var newdiv1 = $(str);
-  $('body').append(newdiv1);
-  
+function make_chat_box(){  
   $('#closer').click(function() { $('#chatbox').animate({'width': 'toggle'}); });
 };
 
