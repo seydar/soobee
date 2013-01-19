@@ -112,10 +112,27 @@ window.onload = function() {
 
 
 function make_chat_box(){
-  var $newdiv1 = $('<div id="chatter"><div id="chatbox"></div><div id="closer"></div></div>');
-  $('body').append($newdiv1);
+  str = ['<div id="chatter">',
+         '<div id="chatbox">',
+         '<form id="name_form">',
+         '  Name:',
+         '  <input type=text id="name_input" disabled>',
+         '  <input type="submit" id="connect_button" value="Connect" disabled>',
+         '</form>',
+         '<div id="chat_box">',
+         '</div>',
+         '<form id="message_form">',
+         '  <input type=text id="message_input" disabled>',
+         '  <input type="submit" id="send_button" value="Send" disabled>',
+         '</form>',
+         '</div>',
+         '<div id="closer">',
+         '</div>',
+         '</div>'
+        ].join("");
+  var newdiv1 = $(str);
+  $('body').append(newdiv1);
   
-  $('#chatbox').innerHTML = "hello world";
-  $('#closer').click(function() { $('#chatbox').toggle('slow'); });
+  $('#closer').click(function() { $('#chatbox').animate({'width': 'toggle'}); });
 };
 
