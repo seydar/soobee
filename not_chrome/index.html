@@ -1,0 +1,35 @@
+<!doctype html>
+<html height="100%">
+	<head>
+		<script src="https://apps.imoapi.com/imo.im/api/2/imoapi-min.js"></script>
+		<script src="jquery-1.9.0.min.js"></script>
+   		<script src="chat.js"></script>
+   		<script src="page.js"></script>
+   		<link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
+   	</head>
+
+   	<body height="100%">
+   		<iframe id="url_box" src="http://en.wikipedia.org/wiki/Main_Page" width="100%"  seamless>
+   		</iframe>
+
+   		<div id="chatter">
+			<div id="chatbox">
+				<form id="name_form">
+				  Name:
+				    <input type=text id="name_input" disabled> 
+				    <input type="submit" id="connect_button" value="Connect" disabled>
+				</form>
+				<div id="chat_box"></div>
+				<form id="message_form"> 
+					<input type=text id="message_input" disabled>
+					<input type="submit" id="send_button" value="Send" disabled>
+				</form>
+			</div>
+			<div id="closer"></div>
+		</div>
+
+
+
+
+   	</body>
+</html>
