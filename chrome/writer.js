@@ -1,4 +1,7 @@
-var $mode = 'highlightText';
+var mode = 'none';
+function setMode(val) {
+  this.mode = val;
+};
 
 // mark a region with red
 function markBorders(event) {
@@ -37,23 +40,29 @@ function selectorMouseup(event) {
   }
 };
 
-var old = $(document.mouseup);
 $(document).mouseup(function(event) {
-  if (old) {
-    old(event);
-  }
-
-  if ($mode == "markBorders") {
+  if (mode == "markBorders") {
     markBorders(event);
-  } else if ($mode == "highlightText") {
+  } else if (mode == "highlightText") {
     selectorMouseup(event);
   }
 });
 
-
 var overlay = jQuery('<div id="overlay"></div>');
 overlay.appendTo(document.body);
-$(overlay).append('<input type="submit" value="Mark Borders" onClick="$mode = \"markBorders\">');
-$(overlay).append('<input type="submit" value="Highlight Text" onClick="$mode = \"highlightText\">');
-$(overlay).append('<input type="submit" value="Back to Browsing" onClick="$mode = \"none\">');
+$(overlay).append('<center>');
+$(overlay).append('<input type="submit" class="sbe" id="mb" value="Mark Borders">');
+$(overlay).append('<input type="submit" class="sbe" id="ht" value="Highlight Text">');
+$(overlay).append('<input type="submit" class="sbe" id="nn" value="Back to Browsing">');
+$(overlay).append('</center>');
+
+$('input#mb').click(function(event) {
+  setMode('markBorders');
+});
+$('input#ht').click(function(event) {
+  setMode('highlightText');
+});
+$('input#nn').click(function(event) {
+  setMode('none');
+});
 

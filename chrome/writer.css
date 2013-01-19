@@ -9,10 +9,10 @@
   width: 50%;
   height: 5%;
   background-color: #aa0000;
-  filter: alpha(opacity=50);
-  -moz-opacity: 0.5;
-  -khtml-opacity: 0.5;
-  opacity: 0.5;
+  filter: alpha(opacity=75);
+  -moz-opacity: 0.75;
+  -khtml-opacity: 0.75;
+  opacity: 0.75;
   z-index: 10000;
   padding-top: 2px;
 }
