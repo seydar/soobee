@@ -3,6 +3,22 @@
 var channel;
 var userName;
 var nameForm, nameInput, connectButton, chatForm, chatInput, sendButton, chatBox;
+var big = true;
+
+
+function addLoadEvent(func) {
+        var oldonload = window.onload;
+        if (typeof window.onload != 'function') {
+          window.onload = func;
+        } else {
+          window.onload = function() {
+            if (oldonload) {
+              oldonload();
+            }
+            func();
+          }
+        }
+      };
 
 function on_submit_name(event) {
   // Check if any name has been entered.
@@ -66,10 +82,14 @@ function connect() {
       }
     }
   };
+
+  //  document.write("BLAHHHHHHHHHH");
   return new IMO.Channel(client);
 };
 
-addLoadEvent(function() {
+window.onload = function() {
+
+  make_chat_box();
   // Map the HTML elements to variables, and set up listeners for form
   // submission.
   nameForm = document.getElementById("name_form");
@@ -77,13 +97,33 @@ addLoadEvent(function() {
   connectButton = document.getElementById("connect_button");
   nameForm.onsubmit = on_submit_name;
 
+  nameInput.disabled = connectButton.disabled = false;
+
   messageForm = document.getElementById("message_form");
   messageInput = document.getElementById("message_input");
   sendButton = document.getElementById("send_button");
   messageForm.onsubmit = on_send_message;
 
   chatBox = document.getElementById("chat_box");
+
   // Connect to the API channel.
   channel = connect();
-});
+};
+
+
+function make_chat_box(){  
+  $('#closer').click(function() { 
+    
+    //document.getElementById('url_box').width = "100%";
+    $('#chatbox').animate({'width': 'toggle'});
+  if(!big){
+    $('#url_box').animate({'width': '100%'}, {'easing':'swing'});
+  }else{
+    $('#url_box').animate({'width': '75%'});
+  }
+  big = !big;
+    //document.getElementById('chatbox').width = "0px";
+    //$('#url_box').width("30px");
+  });
+};
 

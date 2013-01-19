@@ -1,68 +1,36 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html>
-  <head>
-    <script type="text/javascript" charset="utf-8">
-      // written by simon willison, taken from htmlgoodies.com
-      function addLoadEvent(func) {
-        var oldonload = window.onload;
-        if (typeof window.onload != 'function') {
-          window.onload = func;
-        } else {
-          window.onload = function() {
-            if (oldonload) {
-              oldonload();
-            }
-            func();
-          }
-        }
-      }
-    </script>
+	<head>
+		<script src="https://apps.imoapi.com/imo.im/api/2/imoapi-min.js"></script>
+		<script src="jquery-1.9.0.min.js"></script>
+   		<script src="chat.js"></script>
+   		<!-- <script src="page.js"></script> -->
+   		<link rel="stylesheet" type="text/css" href="stylesheets.css"></link>
+   		<link rel="stylesheet" type="text/css" href="writer.css"></link>
+   	</head>
 
-    <script src="https://apps.imoapi.com/imo.im/api/2/imoapi-min.js"></script>
-    <script src="jquery-1.9.0.min.js"></script>
-    <script src="chat.js"></script>
-    <script src="page.js"></script>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
-  </head>
+   	<body style="height:95%; width:99%">
+   		<iframe id="url_box" src="/proxy/http://en.wikipedia.org/wiki/Main_Page" seamless>
+   		</iframe>
 
-  <body>
+   		<div id="chatter">
+			<div id="chatbox">
+				<form id="name_form">
+				  Name:
+				    <input type=text id="name_input" disabled> 
+				    <input type="submit" id="connect_button" value="Connect" disabled>
+				</form>
+				<div id="chat_box"></div>
+				<form id="message_form"> 
+					<input type=text id="message_input" disabled>
+					<input type="submit" id="send_button" value="Send" disabled>
+				</form>
+			</div>
+			<div id="closer"></div>
+		</div>
 
-    <table border="1" cellpadding="0" cellspacing="1">
-      <tr>
-        <td class="column" id="chat">
-          <form id="name_form">
-             Name:
-             <input type=text id="name_input" disabled>
-             <input type="submit" id="connect_button" value="Connect" disabled>
-          </form>
 
-          <div id="chat_box">
-          </div>
 
-          <form id="message_form">
-            <input type=text id="message_input" disabled>
-            <input type="submit" id="send_button" value="Send" disabled>
-          </form>
-        </td>
 
-        <td class="column" id="page">
-          <form id="url_form">
-            <input type=text id="url_input"
-                   style="width: 220px; height: 18px; margin: 2px"
-                   disabled>
-            <input type="submit" id="url_send" value="Send"
-                   style="width: 60px; margin: 2px" disabled>
-          </form>
-          <iframe id="url_box" src="http://bigbad.evils.in:4567/http://en.wikipedia.org/wiki/Main_Page">
-          </iframe>
-
-          <div id="toolbar">
-            highlight | box | comment
-          </div>
-        </td>
-      </tr>
-    </table>
-
-  </body>
+   	</body>
 </html>
-

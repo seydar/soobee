@@ -5,8 +5,8 @@ require 'open-uri'
 get '/proxy/*' do
   headers 'Access-Control-Allow-Origin' => '*'
 
-  proxy = 'http://bigbad.evils.in:4567/proxy'
-  url   = request.env['REQUEST_URI'][proxy.size+1..-1]
+  proxy = 'http://bigbad.evils.in:4567'
+  url   = request.env['REQUEST_URI'][28..-1]
 
   url =~ /(http:\/\/(.+)\..{3})/
   host = $1
@@ -23,9 +23,5 @@ end
 
 get '/' do
   send_file File.join('.', 'index.html')
-end
-
-get '/:file' do
-  send_file File.join('.', params[:file])
 end
 
