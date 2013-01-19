@@ -21,15 +21,6 @@
 
         alert(url);
       $.get(url, function(data) {
-        // patch up the data so all links use the proxy
-        data = data.replace(/(a href)=[\'\"](http.*)[\'\"]/,
-                            "$1=\"" + proxy + "?url=$2");
-        data = data.replace(/(a href)=[\'"][^http](.*)[\'"]/, 
-                            "$1=\"" + proxy + "?url=http://" + url + "/$2");
-        data = data.replace(/(href|src)=[\'"][^http+](.*)[\'"]/,
-                            '$1="http://' + url + "/$2");
-
-        // replace errthang here with the data
         $('html').html(data.replace(/<html>(.*)<\/html>/, "$1"));
       });
     </script>
