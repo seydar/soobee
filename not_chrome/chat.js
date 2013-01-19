@@ -88,7 +88,6 @@ function connect() {
 
 window.onload = function() {
 
-
   make_chat_box();
   // Map the HTML elements to variables, and set up listeners for form
   // submission.
@@ -112,6 +111,10 @@ window.onload = function() {
 
 
 function make_chat_box(){  
-  $('#closer').click(function() { $('#chatbox').animate({'width': 'toggle'}); });
+  $('#closer').click(function() { 
+    
+    document.getElementById('url_box').width = "100%";
+    $('#chatbox').animate({'width': 'toggle'});
+  });
 };
 

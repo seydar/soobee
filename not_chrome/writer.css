@@ -1,0 +1,96 @@
+.markedBorder {
+  border: 2px solid red;
+}
+
+#overlay {
+  position: fixed;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  height: 5%;
+  background-color: #aa0000;
+  filter: alpha(opacity=75);
+  -moz-opacity: 0.75;
+  -khtml-opacity: 0.75;
+  opacity: 0.75;
+  z-index: 10000;
+  padding-top: 2px;
+}
+
+#chatter {
+  position: fixed;
+  top: 01%;
+  width: 25%;
+  height: 100%;
+  filter: alpha(opacity=1);
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  opacity: 1;
+  z-index: 10000;
+  border:0;
+  margin:0;
+}
+
+#chatbox {
+  height: 80%;
+  width: 95%;
+  background-color: #aaaaaa;
+  float: left;
+  overflow: auto;
+  /* padding-top: 3px; */
+}
+
+#closer {
+  height: 100%;
+  width: 5%;
+  background-color: #0000FF;
+  float: left;
+  overflow:auto;
+}
+
+input#name_input {
+  width: 50%;
+  min-width:5%;
+  margin: 2px;
+}
+
+input#connect_button {
+  width: 25%;
+  margin: 2px;
+  min-width:5%;
+}
+
+input#message_input {
+  width: 70%;
+  margin: 2px;
+  min-width:5%;
+}
+
+input#send_button {
+  width: 20%;
+  margin: 2px;
+  min-width:5%;
+}
+
+#chat_box {
+  background: #FFC2DA;
+  width: 98%;
+  height: 98%;
+  min-height:50%;
+  margin: 0 %;
+  resize: auto;
+  min-width:5%;
+
+}
+
+#url_box{
+
+  left:relative;
+  height:100%;
+  max-width:100%;
+  float:right;
+  min-width:70%;
+  width:auto;
+
+
+}
