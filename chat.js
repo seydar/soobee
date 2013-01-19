@@ -54,10 +54,10 @@ function connect() {
     event_queue: function(name, event) {
       if ((name == "chat") && (event.object.message)) {
         // Display the incoming message in the chat box.
-        if (chatBox.value !== "") {
-          chatBox.value += "\n";
+        if (chatBox.innerHTML !== "") {
+          chatBox.innerHTML += "<br/>";
         }
-        chatBox.value += event.object.message;
+        chatBox.innerHTML += event.object.message;
         chatBox.scrollTop = chatBox.scrollHeight;
       }
     }
