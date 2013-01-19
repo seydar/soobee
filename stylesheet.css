@@ -1,16 +1,28 @@
-.main {
-  border: 1px solid #000000;
-}
-
 #chat {
   background: #978EF5;
-  float: left;
   width: 300px;
 }
 
+#chat boxy {
+  position: relative;
+  width: 290px;
+  height: 100%;
+  margin: 2px;
+  resize: none;
+}
+
 #page {
-  padding-left: 5px;
+  padding-left:  5px;
+  padding-right: 5px;
   background: #D8F58E;
-  float: left;
+}
+
+iframe {
+  height: 93%;
+  width: 100%;
+}
+
+table {
+  position: absolute;
 }
 

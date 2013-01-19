@@ -65,7 +65,7 @@ function connect() {
   return new IMO.Channel(client);
 };
 
-window.onload = function() {
+addLoadEvent(function() {
   // Map the HTML elements to variables, and set up listeners for form
   // submission.
   nameForm = document.getElementById("name_form");
@@ -81,5 +81,5 @@ window.onload = function() {
   chatBox = document.getElementById("chat_box");
   // Connect to the API channel.
   channel = connect();
-};
+});
 
