@@ -113,8 +113,10 @@ window.onload = function() {
 function make_chat_box(){  
   $('#closer').click(function() { 
     
-    document.getElementById('url_box').width = "100%";
+
     $('#chatbox').animate({'width': 'toggle'});
+    $('#url_box').animate({'width':'toggle'});
   });
 };
+
 

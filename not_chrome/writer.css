@@ -32,7 +32,7 @@
 }
 
 #chatbox {
-  height: 80%;
+  height: 100%;
   width: 95%;
   background-color: #aaaaaa;
   float: left;
@@ -75,7 +75,7 @@ input#send_button {
 #chat_box {
   background: #FFC2DA;
   width: 98%;
-  height: 98%;
+  height: 90%;
   min-height:50%;
   margin: 0 %;
   resize: auto;
@@ -86,11 +86,15 @@ input#send_button {
 #url_box{
 
   left:relative;
-  height:100%;
+  height:95%;
+  /* min-width:70%;
   max-width:100%;
-  float:right;
+  */
   min-width:70%;
-  width:auto;
+  max-width: 100%;
+  float:right;
+
+/*  width:auto;	*/
 
 
 }
