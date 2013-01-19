@@ -1,11 +1,32 @@
 #chat {
   background: #978EF5;
-  width: 300px;
+  width: 25%;
+}
+
+input#name_input {
+  width: 50%;
+  margin: 2px;
+}
+
+input#connect_button {
+  width: 25%;
+  margin: 2px;
+}
+
+input#message_input {
+  width: 75%;
+  height: 18px
+  margin: 2px;
+}
+
+input#send_button {
+  width: 20%;
+  margin: 2px;
 }
 
 #chat #chat_box {
   background: #FFC2DA;
-  width: 290px;
+  width: -10px;
   height: 83%;
   margin: 2px;
   overflow: auto;
