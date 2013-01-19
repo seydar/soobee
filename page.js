@@ -2,7 +2,13 @@ function on_new_url(event) {
   if (urlInput.value !== "") {
     urlBox.src = urlInput.value;
   }
+
+  event.preventDefault();
 };
+
+function updateCurrentUrl(url) {
+  document.getElementById("url_box").src = url;
+}
 
 addLoadEvent(function() {
   // Map the HTML elements to variables, and set up listeners for form
