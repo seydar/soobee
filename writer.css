@@ -3,9 +3,9 @@
 }
 
 #overlay {
-  position: fixed;
+  position: auto;
   bottom: 0;
-  left: 25%;
+  float:right;
   width: 50%;
   height: 5%;
   background-color: #aa0000;
@@ -98,4 +98,14 @@ input#send_button {
 /*  width:auto;	*/
 
 
+}
+
+iframe{
+	height:100%;
+	width:100%;
+	min-width:70%;
+}
+body{
+	height:95%;
+	width:100%;
 }
