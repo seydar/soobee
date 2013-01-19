@@ -1,0 +1,1 @@
+html, body {margin: 0px; padding: 0px;}#heatmapArea{position:relative;z-index:1000;border:1px dashed black;}iframe{position:absolute;  height: 93%;  width: 100%;z-index:1;    border: 1px solid green;}
