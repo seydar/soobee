@@ -1,6 +1,9 @@
 #chat {
   background: #978EF5;
   width: 25%;
+  resize: horizontal;
+  overflow:auto;
+  
 }
 
 input#name_input {
@@ -26,7 +29,7 @@ input#send_button {
 
 #chat #chat_box {
   background: #FFC2DA;
-  width: -10px;
+  width: 98%;
   height: 83%;
   margin: 2px;
   overflow: auto;
