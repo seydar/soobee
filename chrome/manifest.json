@@ -12,9 +12,9 @@
 
   "content_scripts": [
     {
-      "matches": ["http://*/*"],
+      "matches": ["http://*/*","https://*/*"],
       "css": ["writer.css"],
-      "js": ["jquery-1.9.0.min.js", "writer.js"]
+      "js": ["jquery-1.9.0.min.js", "writer.js","chat.js"]
     }
   ]
 }
