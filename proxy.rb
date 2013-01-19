@@ -5,14 +5,17 @@ require 'open-uri'
 get '/*' do
   proxy = 'http://bigbad.evils.in:4567'
   url   = request.env['REQUEST_URI'][28..-1]
-  p url
 
+  url =~ /(http:\/\/(.+)\..{3})/
+  host = $1
   txt = open(url).read
 
-  txt.gsub! /(a .* href)=[\'\"]\/\/(.*)[\'\"]/, "a href=\"#{proxy}/http://" + '\2"'
-  txt.gsub! /(a .* href)=[\'\"](http.*)[\'\"]/, "a href=\"#{proxy}" + '/\2"'
-  txt.gsub! /(a .* href)=[\'"][^http](.*)[\'"]/, "a href=\"#{proxy}/#{url}" + '/\2"'
-  txt.gsub! /(href|src)=[\'"][^http+](.*)[\'"]/, '\1="' + url + '/\2"'
+  p url
+
+  txt.gsub! /<a ([^>]*)href=['"](?:http:)?\/\/(.+)['"][^>]*/, '<a \1href="' + proxy + '/http://\2"'
+  txt.gsub! /<a ([^>]*)href=['"](www\..+)['"][^>]*/, '<a \1href="' + proxy + '/http://\2"'
+  txt.gsub! /<a ([^>]*)href=['"](?!http:\/\/)([^'"]+)['"][^>]*/, '<a \1href="' + proxy + '/' + host + '\2"'
+
   txt
 end
 
