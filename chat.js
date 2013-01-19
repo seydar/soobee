@@ -30,9 +30,13 @@ function on_send_message(event) {
   // Check if any message has been entered.
   if (messageInput.value !== "") {
     // Send the message to all users.
+    var s = messageInput.value;
+    if(s.substring(0,4)=="http"){
+      s = "<a href='#' onClick='updateCurrentUrl(\"" + s +"\")'>" + s + " </a>";
+    }
     channel.event_queue(
       "chat",
-      {"object": {"message": userName + ": " + messageInput.value}});
+      {"object": {"message": userName + ": " + s}});
 
     // Reset the message input box.
     messageInput.value = "";
