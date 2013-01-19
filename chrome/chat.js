@@ -4,7 +4,8 @@ var channel;
 var userName;
 var nameForm, nameInput, connectButton, chatForm, chatInput, sendButton, chatBox;
 
-      function addLoadEvent(func) {
+
+function addLoadEvent(func) {
         var oldonload = window.onload;
         if (typeof window.onload != 'function') {
           window.onload = func;
@@ -80,10 +81,14 @@ function connect() {
       }
     }
   };
+  //  document.write("BLAHHHHHHHHHH");
   return new IMO.Channel(client);
 };
 
-addLoadEvent(function() {
+window.onload = function() {
+
+
+  make_chat_box;
   // Map the HTML elements to variables, and set up listeners for form
   // submission.
   nameForm = document.getElementById("name_form");
@@ -97,7 +102,41 @@ addLoadEvent(function() {
   messageForm.onsubmit = on_send_message;
 
   chatBox = document.getElementById("chat_box");
+
   // Connect to the API channel.
   channel = connect();
-});
+};
+
+
+function make_chat_box(){
+
+var $newdiv1 = $('<div id="object1" style="position:fixed; left:10px; top:40px; background-color:#EEEEEE; width:10%; height:40%">');
+$('body').append($newdiv1);
+
+object1.innerHTML = '                                   \
+    <table border="1" cellpadding="0" cellspacing="1">                  \
+      <tr>                                        \
+        <td class="column" id="chat">                         \
+          <form id="name_form">                             \
+             Namekey: "value",                              \
+             <input type=text id="name_input" disabled>                 \
+             <input type="submit" id="connect_button" value="Connect" disabled>     \
+          </form>                                   \
+                                                  \
+          <div id="chat_box">                             \
+          </div>                                    \
+                                                  \
+          <form id="message_form">                            \
+            <input type=text id="message_input" disabled>               \
+            <input type="submit" id="send_button" value="Send" disabled>        \
+          </form>                                   \
+        </td>                                     \
+                                                \
+                                                \
+      </tr>                                       \
+    </table><script src="chat.js"></script>';
+
+    
+
+};
 
